@@ -1,2 +1,41 @@
-name: Zaw Myo Latt
-markdown: kramdown
+# For Atom Feed
+domain: zawmyolatt.github.io
+author: Zaw Myo Latt
+email: zawmyolatt.ucsy@gmail.com
+title: Zaw Myo's Profile
+
+# standard jekyll configuration
+
+baseurl: /kit
+permalink: /articles/:title
+highlighter: pygments
+exclude:
+- bin
+- config.rb
+- Gemfile
+- Gemfile.lock
+- gems
+- Procfile
+- Rakefile
+- README.md
+- script
+- vendor
+
+collections:
+  modules:
+    output: true
+  courses:
+    output: true
+
+include:
+- _stylesheets
+- _javascript
+
+markdown: rdiscount
+
+sass:
+  sass_dir: assets/vendor/
+  style: :compressed
+
+# Custom site configuration
+lang: en
