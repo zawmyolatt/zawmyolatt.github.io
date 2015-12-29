@@ -1,41 +1,7 @@
-# For Atom Feed
-domain: zawmyolatt.github.io
+# Site settings
+title: Zaw Myo Blog
+description: A portfolios for Zaw Myo Latt
+keywords: Zaw Myo, Lone Lone, Portfolios,PHP Developer,Angular Developer,Ionic Developer,Android Developer,IOS Developer
 author: Zaw Myo Latt
-email: zawmyolatt.ucsy@gmail.com
-title: Zaw Myo's Profile
-
-# standard jekyll configuration
-
-baseurl: /kit
-permalink: /articles/:title
-highlighter: pygments
-exclude:
-- bin
-- config.rb
-- Gemfile
-- Gemfile.lock
-- gems
-- Procfile
-- Rakefile
-- README.md
-- script
-- vendor
-
-collections:
-  modules:
-    output: true
-  courses:
-    output: true
-
-include:
-- _stylesheets
-- _javascript
-
-markdown: rdiscount
-
-sass:
-  sass_dir: assets/vendor/
-  style: :compressed
-
-# Custom site configuration
-lang: en
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
