@@ -1,84 +1,575 @@
----
-layout: compress
----
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ site.title }}</title>
-        <meta name="description" content="{{ site.description }}" />
-        <meta name="keywords" content="{{ site.keywords }}" />
-        <meta name="author" content="{{ site.author }}" />
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/modern-blog.min.css" />
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script>
-        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-        var root = document.getElementsByTagName('html')[0];
-        root.setAttribute('class', 'ff');
-        };
-        </script>
-    </head>
-    <body class="body">
-        <div class="container">
-            <header class="header">
-                <h1>My Portfolios<span>A Clean, Fresh Minimal Look.</span></h1>
-                <nav class="links">
-                    <a href="http://fb.com/cto.zawmyolatt"><i class="fa fa-twitter-square fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-linkin-square fa-3x"></i></a>
-                </nav>
-            </header>
-            <div class="content">
-                <!-- trianglify pattern container -->
-                <div class="pattern pattern--hidden"></div>
-                <!-- cards -->
-                <div class="wrapper">
-                    {% for post in site.posts %}
-                        <div class="card">
-                            <div class="card__container card__container--closed">
-                                <svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
-                                    <defs>
-                                    <clipPath id="{{ post.subtitle | slugify }}">
-                                <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
-                                </clipPath>
-                                </defs>
-                                <image clip-path="url(#{{ post.subtitle | slugify }})" width="1920" height="1200" xlink:href="{{ post.image }}"></image>
-                            </svg>
-                            <div class="card__content">
-                                <i class="card__btn-close fa fa-times"></i>
-                                <div class="card__caption">
-                                    <h2 class="card__title">{{ post.title }}</h2>
-                                    <p class="card__subtitle">{{ post.subtitle }}</p>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Zaw Myo Latt - Professional Innovative Developer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+  <script src="js/vendor/jquery.hashchange.min.js"></script>
+  <script src="js/vendor/jquery.easytabs.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+      <![endif]-->
+</head>
+  <body class="bg-fixed bg-1">
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    
+   <div class="main-container">
+    <div class="main wrapper clearfix">
+      <!-- Header Start -->
+        <header id="header">
+            <div id="logo">
+                <h2>
+                    Zaw Myo Latt
+                </h2>
+                <h4>
+                    Professional Innovative Developer
+                </h4>
+            </div>
+        </header>
+        <!-- Header End -->
+        <!-- Main Tab Container -->
+        <div id="tab-container" class="tab-container">
+          <!-- Tab List -->
+            <ul class='etabs'>
+                <li class='tab' id="tab-about">
+                  <a href="#about"><i class="icon-user"></i><span> About Me</span></a>
+                </li>
+                <li class='tab'>
+                  <a href="#resume"><i class="icon-file-text"></i><span> Resume</span></a>
+                </li>
+                <li class='tab'>
+                  <a href="#portfolio"><i class="icon-heart"></i><span> Portfolio</span></a>
+                </li>
+                <li class='tab'>
+                  <a href="#contact"><i class="icon-envelope"></i><span> Contact</span></a>
+                </li>
+            </ul>
+          <!-- End Tab List -->
+            <div id="tab-data-wrap">
+              <!-- About Tab Data -->
+                <div id="about">
+                    <section class="clearfix">
+                        <div class="g2">
+                            <div class="photo">
+                                <img src="images/my_pic.jpg" alt="Zaw Myo Latt">
+                            </div>
+                            <div class="info">
+                                <h2>
+                                    Zaw Myo Latt
+                                </h2>
+                                <h4>
+                                    Professional Innovative Developer
+                                </h4>
+                                <p style="text-align: justify;">
+                                    Graduated from the <b>University of Computer Studies, Yangon (UCSY)</b> in Myanmar and got a <b>Bachelor of Science in Computer Information and Technology (B.C.Sc)</b>. Experiences and knowledge obtained through university life and also via IT Business experiences in marketing management and software quality control. I got experiences in web application area because I worked as a <b>Junior developer</b> for 8 months, then worked as a <b>Senior developer</b> for 1 year. Now, I’m working as a Team Leader at the same company <a href="http://ikloudit.com" target="_blank"><b>iKloudit Myanmar Office (iKloudit is a Singapore Company)</b></a>, also called <a href="http://evercrystal.com" target="_blank"><b>Ever Crystal One-stop IT Solution</b></a>. There, we have to write the web app projects, which were sold in our Singapore Head Office such as <b>HR System, POS System, CMS and other E-commerce System.</b>
+                                    <br>
+                                    <br>
+                                    At the same time, i'm also working as a <b>IT Manager</b> in <b>GMBF Group of Companies</b> (which was founded locally).In GMBF, i also took the responsible of mobile app and web app development like <b>Bus Ticket Booking system,Coupon based marketing development system etc.</b>
+                                    <br>
+                                     (You can also see my worked experiences under <a href="#resume">resume</a> part).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="main-links sidebar">
+                                <ul>
+                                    <li>
+                                        <a href="#resume">View My Resume</a>
+                                    </li>
+                                    <li>
+                                        <a href="#portfolio">My Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#contact">Contact Me</a>
+                                    </li>
+                                    <li>
+                                         <a href="cv/zawmyolatt.doc" target="_blank"> Download My CV </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="break"></div>
+                        <div class="contact-info">
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="mailto:zawmyolatt.ucsy@gmail.com">zawmyolatt.ucsy@gmail.com</a></h3>
+                                <p>Email Address</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="https://www.linkedin.com/in/zawmyolatt" target="_blank">Zaw Myo Latt</a></h3>
+                                <p>LinkedIn Profile</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="http://fb.com/cto.zawmyolatt" target="_blank">Zaw Myo Latt</a></h3>
+                                <p>Facebook</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </section><!-- content -->
+                </div>
+              <!-- End About Tab Data -->
+              <!-- Resume Tab Data -->
+                <div id="resume">
+                    <section class="clearfix">
+                        <div class="g2">
+                            <h3>
+                                Work Experiences
+                            </h3>
+                            <ul class="no-list work">
+                                <li>
+                                    <h5>
+                                        DTP Trainer
+                                    </h5><span class="label label-info">2012-2013</span>
+                                    <p>
+                                        When studying at UCSY, i worked as a part-time DTP trainer and shared some awsome things what i know about computer. 
+                                    </p>
+                                </li>
+                                <li>
+                                    <h5>
+                                        PHP Junior Web Developer
+                                    </h5><span class="label label-info">2013:10-2014:06</span>
+                                    <p>
+                                        After graduated, i applied a junior developer post at <a href="http://evercrystal.com" target="_blank">Ever Crystal</a>.There, i have to do many challange & demend app which was gave by <a href="http://ikloudit.com" target="_blank"> iKloudit </a>. 
+                                    </p>
+                                </li>
+                                <li>
+                                    <h5>
+                                        PHP Senior Web Developer
+                                    </h5><span class="label label-info">2014:06-2015</span>
+                                    <p>
+                                        Eventually, i'm just got many experiences from SG site.Also noticed about how to write robust coding, data structure , OOP things and start doing some awsome coding with self-studying.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h5>
+                                        Web Development Team Lead
+                                    </h5><span class="label label-success">2015-Present</span>
+                                    <p>
+                                        Finally, i became a web development team leader and still doing some cool stuffs such as global configuration POS framework, global configuration POS framework with fingerprint attendance import, etc.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h5>
+                                        IT Manager (At GMBF Group of Companies)
+                                    </h5><span class="label label-success">2015-Present</span>
+                                    <p>
+                                        Also working in GMBF as a manger, doing both mobile app development and web app developement for <a href="https://www.bnfexpress.com" target="_blank">BNF Express</a> , <a href="https://www.myanmarcouponcode.com" target="_blank">Myanmar Coupon Code</a> , <a href="http://www.myanmarbusticket.com" target="_blank">Myanmar Bus ticket</a> etc. 
+                                    </p>
+                                </li>
+                                <li>
+                                    <h5>
+                                        Being Awesome
+                                    </h5><span class="label label-danger">2013-Till Death</span>
+                                    <p>
+                                        I loved to do some awsome tech not only in my office hours , but also in my private hours.
+                                        That why my weakness is can't stay alone with computer :-)
+                                    </p>
+                                </li>
+                            </ul>
+                            <h3>
+                                Education
+                            </h3>
+                            <ul class="no-list work">
+                                <li>
+                                    <h5>
+                                        Bachelor's Degree of Computer Science/Information Technology
+                                    </h5>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <h5>
+                                         Major: Software Engineering
+                                    </h5>
+                                    <p></p>
+
+                                </li>
+                                <li>
+                                    <h5>
+                                         Specialization: IT/Computer – Web & Mobile Technology
+                                    </h5>
+                                    <p></p>
+
+                                </li>
+                            </ul>
+
+                            <h3>
+                                Diploma and Certificates
+                            </h3>
+                            <ul class="no-list work">
+                                <li>
+                                    <h5>
+                                        Durosoft Web Studio, Certified in advanced PHP <br>(Now Fairway web)
+                                    </h5><span class="label label-success">2010-2011</span>
+                                    <p></p>
+
+                                </li>
+                                <li>
+                                    <h5>
+                                        KMD, Certified in Practical Network Course
+                                    </h5><span class="label label-warning">2011-2012</span>
+                                    <p></p>
+
+                                </li>
+                                <li>
+                                    <h5>
+                                        Certificate of Excellence <br> in IT Business Plan Contest 2013(ICCNA)
+                                    </h5><span class="label label-warning">2013</span>
+                                    <p></p>
+
+                                </li>
+                                <li>
+                                    <h5>
+                                        Contest on Technopreneurship 2014 <br>(Conducted by Myanmar-Korea IT Center)
+                                    </h5><span class="label label-warning">2014</span>
+                                    <p></p>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="g1">
+                            <div class="sidebar">
+                                <h3>
+                                    Skills
+                                </h3>
+                                <h5>
+                                    Framework
+                                </h5>
+                                <div class="meter emerald">
+                                    <span style="width: 90.3%"><span>Code Igniter</span></span>
                                 </div>
-                                <div class="card__copy">
-                                    <div class="meta">
-                                        <img class="meta__avatar" src="{{ post.avatar }}" />
-                                        <span class="meta__author">{{ post.author }}</span>
-                                        <span class="meta__date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                                    </div>
-                                    {{ post.content }}
+                                <div class="meter wisteria">
+                                    <span style="width: 22%"><span>Yii</span></span>
+                                </div>
+                                <div class="meter carrot">
+                                    <span style="width: 80%"><span>Laravel</span></span>
+                                </div>
+                                <div class="meter sunflower">
+                                    <span style="width: 60%"><span>Bootstrap</span></span>
+                                </div>
+                                <div class="meter midnight">
+                                    <span style="width: 70%"><span>Ionic</span></span>
+                                </div>
+                             <!--    <div class="meter pomengrate">
+                                    <span style="width: 60%"><span>Microsoft Office</span></span>
+                                </div>
+                                <div class="meter asbestos">
+                                    <span style="width: 65%"><span>Linux</span></span>
+                                </div>
+ -->                            <div class="break"></div>
+                                <h5>
+                                    Programming Language
+                                </h5>
+                                <div class="meter emerald">
+                                    <span style="width: 80.3%"><span>HTML/CSS</span></span>
+                                </div>
+                                <div class="meter carrot">
+                                    <span style="width: 92%"><span>PHP/MySql</span></span>
+                                </div>
+                                <div class="meter wisteria">
+                                    <span style="width: 95%"><span>jQuery/JavaScript</span></span>
+                                </div>
+                                <div class="meter sunflower">
+                                    <span style="width: 75%"><span>Angular</span></span>
+                                </div>
+                                <div class="meter asbestos">
+                                    <span style="width: 22%"><span>Android</span></span>
+                                </div>
+                                <div class="meter pomengrate">
+                                    <span style="width: 15%"><span>Swift</span></span>
+                                </div>
+                                <div class="meter midnight">
+                                    <span style="width: 25%"><span>VB</span></span>
+                                </div>
+
+                               <div class="break"></div>
+                                <h5>
+                                    Software
+                                </h5>
+                                <div class="meter emerald">
+                                    <span style="width: 80.3%"><span>VCS (Git) </span></span>
+                                </div>
+                                <div class="meter carrot">
+                                    <span style="width: 92%"><span>Sublime Text</span></span>
+                                </div>
+                                <div class="meter wisteria">
+                                    <span style="width: 75%"><span>Vim</span></span>
+                                </div>
+                                <div class="meter sunflower">
+                                    <span style="width: 85%"><span>PHP Strom</span></span>
+                                </div>
+                                <div class="meter asbestos">
+                                    <span style="width: 45%"><span>Android Studio</span></span>
+                                </div>
+                                <div class="meter pomengrate">
+                                    <span style="width: 80%"><span>Eclipse</span></span>
+                                </div>
+                                <div class="meter midnight">
+                                    <span style="width: 95%"><span>Filezilla</span></span>
+                                </div>
+
+                                <div class="break"></div>
+                                <h5>
+                                    Other
+                                </h5>
+                                <div class="meter emerald">
+                                    <span style="width: 80.3%"><span>Web API (RESTFUL)</span></span>
+                                </div>
+                                <div class="meter carrot">
+                                    <span style="width: 45%"><span>AWS Mgmt</span></span>
+                                </div>
+                                <div class="meter sunflower">
+                                    <span style="width: 85%"><span>Private Server Mgmt</span></span>
+                                </div>
+                                <div class="meter asbestos">
+                                    <span style="width: 95%"><span>Development Consultant</span></span>
+                                </div>
+                                <div class="meter pomengrate">
+                                    <span style="width: 80%"><span>Project Mgmt</span></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-                <!-- /cards -->
+                    </section>
+                </div>
+              <!-- End Resume Tab Data -->
+              <!-- Portfolio Tab Data -->
+                <div id="portfolio">
+                    <section class="clearfix">
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/bnf.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="https://www.bnfexpress.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/myanmar_busticket.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://myanmarbusticket.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/crystal_hr.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://crystalhr.evercrystal.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="break"></div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/crystal_app.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://app.evercrystal.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/ikloudit_hr.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://newhr.iklouditlive.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/ikloudit_hisa.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://newhisa.iklouditlive.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="break"></div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/ikloudit_inventory.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://inventory.iklouditlive.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/ikloudit_silver.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://silver.democrystal.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/ateams.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://ateams.iklouditlive.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="break"></div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/insurance.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://insurance.democrystal.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/foodee.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="http://foodinger.democrystal.com" class="btn" target="_blank">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="g1">
+                            <div class="image">
+                                <img src="images/portfolio/bnfmobile.png" alt="">
+                                <div class="image-overlay">
+                                    <div class="image-link">
+                                        <a href="#" class="btn" target="_blank">Android App</a>
+                                        <a href="#" class="btn" target="_blank">iOS App</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </section>
+                </div>
+              <!-- End Portfolio Data -->
+              <!-- Contact Tab Data -->
+                <div id="contact">
+                    <section class="clearfix">
+                       <div class="g1">
+                         <div class="sny-icon-box">
+                           <div class="sny-icon">
+                              <i class="icon-globe"></i>
+                            </div>
+                            <div class="sny-icon-content">
+                              <h4>My Address</h4>
+                              <p>No.41, 121 Street, 7Floor B, Mingalar Taung Nyunt, Yangon, Myanmar.</p>
+                            </div>
+                         </div>
+                       </div>
+                       <div class="g1">
+                         <div class="sny-icon-box">
+                           <div class="sny-icon">
+                              <i class="icon-phone"></i>
+                            </div>
+                            <div class="sny-icon-content">
+                              <h4>Mobile Number</h4>
+                              <p>+959428030737<br/>+959799224135</p>
+                            </div>
+                         </div>
+                       </div>
+                       <div class="g1">
+                         <div class="sny-icon-box">
+                           <div class="sny-icon">
+                              <i class="icon-user"></i>
+                            </div>
+                            <div class="sny-icon-content">
+                              <h4>About Me</h4>
+                              <p>I loved to work with beautiful code.If you do too, plz count me in :-)</p>
+                            </div>
+                         </div>
+                       </div>
+                       <div class="break"></div>
+                        <div class="contact-info">
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="mailto:zawmyolatt.ucsy@gmail.com">zawmyolatt.ucsy@gmail.com</a></h3>
+                                <p>Email Address</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="https://www.linkedin.com/in/zawmyolatt" target="_blank">Zaw Myo Latt</a></h3>
+                                <p>LinkedIn Profile</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="g1">
+                            <div class="item-box clearfix">
+                              <div class="item-data">
+                                <h3><a href="http://fb.com/cto.zawmyolatt" target="_blank">Zaw Myo Latt</a></h3>
+                                <p>Facebook</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                       
+                    </section>
+                </div>
+              <!-- End Contact Data -->
             </div>
         </div>
-        <!-- /container -->
-        <!-- JS -->
-        <script src="js/vendors/trianglify.min.js"></script>
-        <script src="js/vendors/TweenMax.min.js"></script>
-        <script src="js/vendors/ScrollToPlugin.min.js"></script>
-        <script src="js/vendors/cash.min.js"></script>
-        <script src="js/card-modern-blog.min.js"></script>
-        <script src="js/modern-blog.min.js"></script>
-    </body>
+        <!-- End Tab Container -->
+        <footer>
+            <p>
+                <span style="color: #C0392B;">Everythings can be possible ! If you help yourself to studying/doing some awsome things.</span>
+            </p>
+        </footer>
+    </div><!-- #main -->
+</div><!-- #main-container -->
+
+
+
+</body>
 </html>

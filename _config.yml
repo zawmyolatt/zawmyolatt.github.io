@@ -1,7 +1,0 @@
-# Site settings
-title: Zaw Myo Portfolios
-description: A Portfolios for Zaw Myo Latt
-keywords: Zaw Myo, Lone Lone, Portfolios,PHP Developer,Angular Developer,Ionic Developer,Android Developer,IOS Developer
-author: Zaw Myo Latt
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
